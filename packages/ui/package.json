@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.tsx"
+    ".": "./src/index.tsx",
+    "./navbar": "./src/navbar.tsx",
+    "./footer": "./src/footer.tsx"
   },
   "dependencies": {
     "react": "^19.0.0"
