@@ -1,6 +1,7 @@
 import { HeroSection } from "../components/hero-section";
 import { NewsCarousel } from "../components/news-carousel"; 
 import { AboutSection } from "../components/about-section"; 
+import { LabSection } from "../components/lab-section"; 
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       {/* 3. Section Tentang Departemen */}
       <AboutSection />
       
-      {/* Section lain seperti Galeri atau Kontak bisa ditambah di bawah sini */}
+      {/* 4. Lab Section */}
+      <LabSection />
     </main>
   );
 }

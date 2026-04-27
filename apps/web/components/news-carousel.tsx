@@ -22,49 +22,48 @@ const newsData = [
 ];
 
 export function NewsCarousel() {
-  // Autoplay disetel 8 detik sesuai kode awalmu
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 8000, stopOnInteraction: false })
   ]);
 
   return (
-    <section className="relative -mt-24 z-30 px-4">
-      {/* PENJELASAN PERUBAHAN:
-          - rounded: Sudut lengkung kecil (4px) agar tidak terlalu corner/bulat.
-          - border border-gray-200: Memberikan outline tipis yang halus.
-          - shadow-none: Memastikan tidak ada bayangan sama sekali.
+    <section className="relative -mt-16 z-30 px-4">
+      {/* - max-w-5xl: Dipersempit dari 6xl agar lebih ramping 
+          - rounded-none: Sesuai tema sharp corners sebelumnya
+          - shadow-sm: Shadow tipis agar tetap elegan
       */}
       <div 
-        className="max-w-6xl mx-auto overflow-hidden rounded border border-gray-200 bg-white shadow-none" 
+        className="max-w-5xl mx-auto overflow-hidden rounded-none border border-gray-200 bg-white shadow-sm" 
         ref={emblaRef}
       >
         <div className="flex">
           {newsData.map((news) => (
             <div className="flex-[0_0_100%] min-w-0 flex flex-col md:flex-row" key={news.id}>
               
-              {/* Bagian Gambar */}
-              <div className="md:w-1/2 h-[300px] md:h-[400px] relative">
+              {/* Bagian Gambar: Tinggi dikurangi dari 400px ke 320px */}
+              <div className="md:w-5/12 h-[250px] md:h-[320px] relative">
                 <img
                   src={news.image}
                   alt={news.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                {/* Overlay tipis agar gambar tidak terlalu terang jika menabrak teks */}
                 <div className="absolute inset-0 bg-black/5 md:hidden" />
               </div>
 
-              {/* Bagian Teks */}
-              <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white">
-                <span className="text-blue-900 font-bold text-xs uppercase tracking-widest mb-3">
+              {/* Bagian Teks: Padding dikurangi dari p-12 ke p-8 */}
+              <div className="md:w-7/12 p-6 md:p-8 flex flex-col justify-center bg-white">
+                <span className="text-blue-900 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">
                   {news.category}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+                
+                {/* Judul dikecilkan dari text-4xl ke text-2xl/3xl */}
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 leading-tight">
                   {news.title}
                 </h2>
                 
-                <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-6">
-                  <span className="text-slate-400 text-sm font-medium">{news.date}</span>
-                  <button className="text-[#1a3a6b] font-bold flex items-center gap-2 group transition-colors hover:text-blue-700">
+                <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span className="text-slate-400 text-xs font-medium">{news.date}</span>
+                  <button className="text-[#1a3a6b] text-sm font-bold flex items-center gap-2 group transition-colors hover:text-blue-700">
                     Selengkapnya 
                     <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </button>
