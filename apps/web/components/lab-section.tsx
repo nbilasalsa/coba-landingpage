@@ -29,7 +29,7 @@ const labData = [
 
 export function LabSection() {
   return (
-    <section className="bg-white pt-12 pb-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white pt-12 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Judul Section Utama */}
         <div className="mb-16">
