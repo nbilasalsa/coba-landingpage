@@ -1,3 +1,7 @@
+"use client";
+
+import Typewriter from 'typewriter-effect';
+
 export function HeroSection() {
   return (
     <section className="relative w-full h-screen min-h-[500px] flex items-center justify-center overflow-hidden">
@@ -19,9 +23,21 @@ export function HeroSection() {
           className="w-32 h-32 object-contain mb-6 opacity-90 drop-shadow-lg"
         />
 
-        {/* Title */}
-        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold drop-shadow-md">
-          Departemen Teknik Informatika
+        {/* Title w animation Typewriter */}
+        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold drop-shadow-md min-h-[1.5em]">
+          <Typewriter
+            options={{
+              strings: [
+                'Fakultas Teknik',
+                'Departemen Teknik Informatika'
+              ],
+              autoStart: true,
+              loop: true,
+              delay: 65,
+              deleteSpeed: 65,
+              cursor: '|'
+            }}
+          />
         </h1>
       </div>
     </section>
