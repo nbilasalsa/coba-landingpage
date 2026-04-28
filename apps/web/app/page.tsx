@@ -3,6 +3,7 @@ import { NewsCarousel } from "../components/news-carousel";
 import { AboutSection } from "../components/about-section"; 
 import { LabSection } from "../components/lab-section"; 
 import { AgendaSection } from "../components/agenda-section";
+import { NewsSection } from "../components/news-section";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* 5. Agenda Section */}
       <AgendaSection />
+
+      {/* 6. Section Berita */}
+      <NewsSection />
     </main>
   );
 }
