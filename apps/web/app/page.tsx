@@ -4,6 +4,7 @@ import { AboutSection } from "../components/about-section";
 import { LabSection } from "../components/lab-section"; 
 import { AgendaSection } from "../components/agenda-section";
 import { NewsSection } from "../components/news-section";
+import { EnrollSection } from "../components/enroll-section";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
 
       {/* 6. Section Berita */}
       <NewsSection />
+
+      {/* 7. Section Pendaftaran */}
+      <EnrollSection />
     </main>
   );
 }
