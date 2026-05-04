@@ -54,34 +54,37 @@ export function ProfileContent() {
         </div>
       </section>
 
-      {/* BODY CONTENT - Menggunakan max-w-7xl agar sejajar batas navbar */}
+      {/* BODY CONTENT */}
       <div className="max-w-7xl mx-auto px-12 py-20 space-y-24">
         
-        {/* Sejarah - Layout Grid untuk menempatkan foto di samping */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        {/* Sejarah - Font disamakan dengan Visi Misi Tujuan (text-lg & justify) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-8 space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-[3px] h-8 bg-[#1a3a6b]/60" />
               <h2 className="text-2xl font-bold text-[#1a3a6b]">Sejarah</h2>
             </div>
-            <div className="text-gray-700 leading-relaxed text-[15px] text-justify space-y-4 pr-4">
+            {/* Menggunakan text-lg agar sama besar dengan bagian lainnya */}
+            <div className="text-gray-700 leading-relaxed text-lg text-justify space-y-6 pr-4">
               <p>Sejarah pengembangan Kampus Teknik Gowa bermula dari visi besar Universitas Hasanuddin untuk menciptakan pusat keunggulan pendidikan teknik yang lebih modern dan terintegrasi di luar pusat kota Makassar. Kebutuhan akan ruang yang lebih luas bagi riset serta meningkatnya jumlah mahasiswa di Kampus Tamalanrea mendorong inisiatif pembangunan kawasan pendidikan baru yang mampu menampung inovasi teknologi masa depan.</p>
               <p>Langkah besar ini terealisasi melalui dukungan kemitraan internasional, di mana pembangunan infrastruktur megah di Kabupaten Gowa ini mendapat dukungan hibah dari pemerintah Jepang melalui JICA (Japan International Cooperation Agency). Kolaborasi ini tidak hanya menghasilkan gedung-gedung dengan arsitektur ikonik seperti Center of Technology (CoT), tetapi juga menyediakan fasilitas laboratorium dengan peralatan mutakhir yang setara dengan standar global.</p>
               <p>Proses migrasi basis pendidikan Fakultas Teknik dilakukan secara bertahap sejak tahun 2012. Departemen Teknik Informatika kini menempati fasilitas yang dirancang khusus untuk mendukung konsentrasi tinggi dalam pengembangan perangkat lunak dan riset digital.</p>
             </div>
           </div>
 
-          {/* KOLOM KANAN: SWIPEABLE STACK FOTO SEJARAH */}
-          <div className="lg:col-span-4 relative flex justify-center items-start pt-10">
+          {/* KOLOM KANAN: SWIPEABLE STACK FOTO (Efek Miring & Sejajar Tengah) */}
+          <div className="lg:col-span-4 relative flex justify-center items-center h-[300px]">
             {photos.map((src, index) => {
               const offset = (index - currentIndex + photos.length) % photos.length;
+              const rotation = offset === 0 ? 0 : offset % 2 === 0 ? 3 : -3;
+              
               return (
                 <div
                   key={src}
                   className="absolute w-full aspect-video rounded-xl overflow-hidden shadow-lg transition-all duration-1000 border-[6px] border-white"
                   style={{
                     zIndex: photos.length - offset,
-                    transform: `translateY(${offset * 12}px) scale(${1 - offset * 0.05})`,
+                    transform: `translateY(${offset * 10}px) scale(${1 - offset * 0.05}) rotate(${rotation}deg)`,
                     opacity: 1 - offset * 0.40,
                   }}
                 >
@@ -92,7 +95,7 @@ export function ProfileContent() {
           </div>
         </div>
 
-        {/* Visi - Layout Full Width md:grid-cols-12 agar teks memanjang ke kanan */}
+        {/* Visi */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div className="md:col-span-2 flex items-center gap-4">
             <div className="w-[3px] h-8 bg-[#1a3a6b]/60" />
@@ -100,23 +103,20 @@ export function ProfileContent() {
           </div>
           <div className="md:col-span-10 relative">
             <div className="text-5xl text-[#1a3a6b] font-serif font-black leading-none mb-2">“</div>
-            {/* text-lg untuk memperbesar font isi */}
             <p className="text-gray-800 text-lg leading-relaxed font-medium text-justify">
               <i>Pusat unggulan dalam pendidikan, penelitian dan penerapan teknologi informasi berbasis jaringan komputer dan sistem cerdas berlandaskan Benua Maritim Indonesia tahun 2025</i>
             </p>
           </div>
         </div>
 
-        {/* Misi - Layout Full Width */}
+        {/* Misi */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div className="md:col-span-2 flex items-center gap-4">
-            {/* Persegi panjang biru ditambahkan di sini */}
             <div className="w-[3px] h-8 bg-[#1a3a6b]/60" />
             <h2 className="text-2xl font-bold text-[#1a3a6b]">Misi</h2>
           </div>
           <div className="md:col-span-10 relative">
             <div className="text-5xl text-[#1a3a6b] font-serif font-black leading-none mb-2">“</div>
-            {/* text-lg untuk memperbesar font isi */}
             <ol className="space-y-4 text-gray-800 text-lg leading-relaxed pl-1 text-justify">
               <li className="flex gap-3">
                 <span className="font-bold text-[#1a3a6b]">1.</span>
@@ -138,16 +138,14 @@ export function ProfileContent() {
           </div>
         </div>
 
-        {/* Tujuan - Layout Full Width */}
+        {/* Tujuan */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div className="md:col-span-2 flex items-center gap-4">
-            {/* Persegi panjang biru ditambahkan di sini */}
             <div className="w-[3px] h-8 bg-[#1a3a6b]/60" />
             <h2 className="text-2xl font-bold text-[#1a3a6b]">Tujuan</h2>
           </div>
           <div className="md:col-span-10 relative">
             <div className="text-5xl text-[#1a3a6b] font-serif font-black leading-none mb-2">“</div>
-            {/* text-lg untuk memperbesar font isi */}
             <ol className="space-y-4 text-gray-800 text-lg leading-relaxed pl-1 text-justify">
               <li className="flex gap-3">
                 <span className="font-bold text-[#1a3a6b]">1.</span>
@@ -170,8 +168,8 @@ export function ProfileContent() {
         </div>
       </div>
 
-      {/* VIDEO SECTION */}
-      <section className="bg-white py-24 px-12 flex justify-center border-t border-gray-20">
+      {/* VIDEO SECTION - Ukuran 5xl proporsional */}
+      <section className="bg-white py-24 px-12 flex justify-center border-t border-gray-100">
         <div className="w-full max-w-5xl aspect-video bg-black relative overflow-hidden shadow-sm">
           <iframe
             className="absolute inset-0 w-full h-full"
