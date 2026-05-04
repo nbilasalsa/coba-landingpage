@@ -8,6 +8,7 @@
     "./footer": "./src/footer.tsx"
   },
   "dependencies": {
+    "lucide-react": "^1.14.0",
     "react": "^19.0.0"
   }
 }

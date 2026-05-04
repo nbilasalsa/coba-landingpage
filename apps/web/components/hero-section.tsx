@@ -16,15 +16,15 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
-        {/* Logo / emblem */}
+        {/* Logo Unhas Putih - Ukuran diperbesar ke w-48 h-48 */}
         <img
           src="/images/Logo-Resmi-Unhas-White-Version.png"
           alt="Logo Unhas"
-          className="w-32 h-32 object-contain mb-6 opacity-90 drop-shadow-lg"
+          className="w-48 h-48 md:w-52 md:h-52 object-contain mb-8 opacity-80 drop-shadow-2xl transition-transform hover:scale-105 duration-300"
         />
 
         {/* Title w animation Typewriter */}
-        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold drop-shadow-md min-h-[1.5em]">
+        <h1 className="text-white text-4xl sm:text-5xl lg:text-7xl font-bold drop-shadow-lg min-h-[1.5em] leading-tight">
           <Typewriter
             options={{
               strings: [
