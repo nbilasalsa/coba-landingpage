@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css"
-import { Navbar } from "@repo/ui";
-import { Footer } from "@repo/ui";
+import "./globals.css";
+// Gabungkan import agar rapi dan tidak duplikat
+import { Navbar, Footer, ScrollToTop } from "@repo/ui";
 
 export const metadata: Metadata = {
   title: "Departemen Teknik Informatika - Universitas Hasanuddin",
@@ -15,10 +15,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body>
+      <body className="antialiased text-slate-900 bg-white">
         <Navbar />
-        <main>{children}</main>
+        
+        {/* Memberi min-h agar footer tetap di bawah jika konten sedikit */}
+        <main className="min-h-screen">
+          {children}
+        </main>
+        
         <Footer />
+        
+        {/* ScrollToTop diletakkan di paling bawah body */}
+        <ScrollToTop />
       </body>
     </html>
   );

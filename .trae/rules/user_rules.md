@@ -1,0 +1,25 @@
+- [SANGAT PENTING] Dilarang menggunakan CSS Grid. Seluruh layout WAJIB menggunakan Flexbox (flex, flex-wrap, basis, grow, shrink).
+- UI Components menggunakan full shadcn/ui tanpa custom Tailwind di luar standar
+- Shared UI seperti Header dan Sidebar wajib diletakkan di packages/ui
+- Icons menggunakan Lucide React
+- Semua ikon di UI wajib menggunakan Lucide React (tidak menggunakan SVG custom/inline/apalgi emoji, jangan)
+- State Management menggunakan React Context atau Hooks minimalis
+- API Client menggunakan Axios untuk setup placeholder
+- Visualisasi grafik pada Dashboard wajib menggunakan ECharts
+- Sidebar dan Header harus menggunakan komponen shadcn yang responsif (Sheet untuk mobile dan Collapsible untuk desktop)
+- Setiap form wajib menggunakan react-hook-form yang terintegrasi dengan Yup validator
+- Implementasi form harus menggunakan wrapper Form dari shadcn untuk konsistensi styling error
+- Wajib menggunakan komponen shadcn/ui untuk elemen UI umum (Card, Input, Label, Button, Dialog/Modal, Sheet/Drawer). Hindari CSS manual; jika diperlukan tambahan styling, gunakan utilitas Tailwind standar, bukan CSS custom
+- Jika komponen bukan library eksternal, maka harus berasal dari paket UI bersama (packages/ui) yang mengikuti pola shadcn/ui. Jangan menulis style inline kecuali ada instruksi eksplisit
+- Teks pada background putih atau background default yang tidak dikustom wajib berwarna hitam (#000 atau #111827)
+- Field input wajib memiliki background putih murni (#FFFFFF) tanpa overrides warna
+- Struktur routing admin dipisah menggunakan Route Groups: app/(public) untuk login dan app/(admin) untuk area terproteksi
+- Menggunakan teknik Barrel Exports pada packages/ui/src/index.ts
+- Definisi komponen menggunakan Named Exports
+- Strict type safety pada TypeScript dan dilarang menggunakan any kecuali untuk placeholder prototipe
+- Header wajib disusun dengan Flexbox, bukan Grid. Gunakan flex untuk mengatur bagian kiri–judul–kanan. Pada layar sempit, susun elemen secara vertikal agar rapi di mobile. Dilarang menggunakan CSS Grid untuk Header.
+- Setiap section pada halaman admin harus dibungkus komponen Card untuk konsistensi layout dan visual hierarchy.
+- Warna aksi tombol harus mengikuti semantic variants: primary, secondary, success, warning, danger, muted. Implementasi mengikuti pola shadcn/ui (Tailwind utility) agar konsisten.
+- Styling harus mengutamakan Tailwind CSS dan komponen shadcn/ui. Hindari CSS manual dan inline style; gunakan utilitas Tailwind standar bila perlu penyesuaian.
+- Dilarang menambahkan style custom di global.css atau file CSS manapun (kecuali direktif Tailwind: @tailwind base, @tailwind components, @tailwind utilities). Seluruh styling baru harus ditulis menggunakan utilitas Tailwind di level komponen.
+- Tailwind wajib aktif. tailwind.config.js harus memiliki content paths mencakup apps/admin dan packages/ui (mis: './app/**/*.{js,ts,jsx,tsx,mdx}', '../../packages/ui/src/**/*.{js,ts,jsx,tsx}').

@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "../../packages/ui/src/ScrollToTop.tsx"  ],
   "exclude": [
     "node_modules"
   ]

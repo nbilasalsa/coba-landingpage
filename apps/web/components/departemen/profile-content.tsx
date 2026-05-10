@@ -33,7 +33,8 @@ export function ProfileContent() {
         
         <div className="absolute inset-0 bg-black/60" />
         
-        <div className="relative z-10 max-w-7xl mx-auto h-full px-12 flex items-center">
+        {/* Responsive Padding: px-3 di mobile, px-12 di desktop */}
+        <div className="relative z-10 max-w-7xl mx-auto h-full px-3 md:px-12 flex items-center">
           <div className="flex flex-col items-start">
             <img 
               src="/images/Logo-Resmi-Unhas-White-Version.png" 
@@ -54,8 +55,8 @@ export function ProfileContent() {
         </div>
       </section>
 
-      {/* BODY CONTENT */}
-      <div className="max-w-7xl mx-auto px-12 py-20 space-y-24">
+      {/* BODY CONTENT - Responsive Padding: px-3 di mobile, px-12 di desktop */}
+      <div className="max-w-7xl mx-auto px-3 md:px-12 py-20 space-y-24">
         
         {/* Sejarah - Font disamakan dengan Visi Misi Tujuan (text-lg & justify) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -168,8 +169,8 @@ export function ProfileContent() {
         </div>
       </div>
 
-      {/* VIDEO SECTION - Ukuran 5xl proporsional */}
-      <section className="bg-white py-24 px-12 flex justify-center border-t border-gray-100">
+      {/* VIDEO SECTION - Responsive Padding: px-3 di mobile, px-12 di desktop */}
+      <section className="bg-white py-24 px-3 md:px-12 flex justify-center border-t border-gray-100">
         <div className="w-full max-w-5xl aspect-video bg-black relative overflow-hidden shadow-sm">
           <iframe
             className="absolute inset-0 w-full h-full"
